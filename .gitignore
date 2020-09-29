@@ -25,3 +25,5 @@ yarn-error.log*
 package-lock.json
 
 README.md
+
+request.http

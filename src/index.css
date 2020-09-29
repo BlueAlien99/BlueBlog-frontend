@@ -1,13 +1,141 @@
+:root{
+  --bg-dark: #36393f;
+  --bg-darker: #2f3136;
+  --bg-darkest: #202225;
+
+  --elbg-dark: #32353b;
+  --inputbg: #303339;
+
+  --primary: #2196F3;
+  --primary-hover: #1976D2;
+  --primary-focus: #1565C0;
+  --accent: #448AFF;
+
+  --header-primary: #fff;
+  --header-secondary: #b9bbbe;
+  --text-normal: #dcddde;
+  --text-muted: #72767d;
+  --text-link: #00b0f4;
+
+  --divider: #BDBDBD;
+
+
+  --nav-height: 100px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  line-height: 1;
+}
+
 body {
+  width: 100vw;
+  height: 100vh;
+
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background: var(--bg-darker);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1{
+  color: var(--text-normal);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#root{
+  width: 100%;
+  height: calc(100% - var(--nav-height));
+}
+
+.route{
+  width: 100%;
+  height: 100%;
+}
+
+.container{
+  padding: 1em;
+  background: var(--bg-dark);
+  width: fit-content;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.btn{
+  display: inline-block;
+  padding: 1em 1em;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-normal);
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.btn-submit{
+  background: var(--primary);
+}
+
+.btn-submit:hover{
+  background: var(--primary-hover);
+}
+
+.btn-submit:focus{
+  background: var(--primary-focus);
+}
+
+.btn-cancel{
+  background: #708090;
+}
+
+.btn-cancel:hover{
+  background: #506070;
+}
+
+.btn-cancel:focus{
+  background: #405060;
+}
+
+input{
+  display: block;
+  box-sizing: border-box;
+  padding: 0.5em 0.5em;
+  background: var(--inputbg);
+  color: var(--text-normal);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: normal;
+  border: 2px solid var(--bg-darker);
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out;
+}
+
+input:hover{
+  border-color: var(--primary-hover);
+}
+
+input:focus{
+  border-color: var(--primary-focus);
+}
+
+label{
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 1rem;
 }
