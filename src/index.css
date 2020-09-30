@@ -56,6 +56,16 @@ h1{
   font-weight: bold;
 }
 
+a{
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
 #root{
   width: 100%;
   height: calc(100% - var(--nav-height));
@@ -137,5 +147,9 @@ label{
   color: var(--text-muted);
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 0.85rem;
+}
+
+.muted{
+  color: var(--text-muted);
 }

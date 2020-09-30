@@ -10,3 +10,8 @@
   width: 100%;
   text-align: center;
 }
+
+#switchMode{
+  font-size: 0.85rem;
+  margin-top: 1em;
+}
