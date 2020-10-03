@@ -8,7 +8,7 @@
 
   --primary: #2196F3;
   --primary-hover: #1976D2;
-  --primary-focus: #1565C0;
+  --primary-active: #1565C0;
   --accent: #448AFF;
 
   --header-primary: #fff;
@@ -21,6 +21,8 @@
 
 
   --nav-height: 100px;
+
+  --dur-short: 0.15s;
 }
 
 * {
@@ -56,13 +58,15 @@ h1{
   font-weight: bold;
 }
 
-a{
+a, .a{
+  background: none;
   color: var(--primary);
   text-decoration: none;
   font-weight: 500;
+  cursor: pointer;
 }
 
-a:hover{
+a:hover, .a:hover{
   text-decoration: underline;
 }
 
@@ -94,7 +98,7 @@ a:hover{
   text-decoration: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.15s ease-in-out;
+  transition: background-color var(--dur-short) ease-in-out;
 }
 
 .btn-submit{
@@ -105,8 +109,8 @@ a:hover{
   background: var(--primary-hover);
 }
 
-.btn-submit:focus{
-  background: var(--primary-focus);
+.btn-submit:active{
+  background: var(--primary-active);
 }
 
 .btn-cancel{
@@ -117,7 +121,7 @@ a:hover{
   background: #506070;
 }
 
-.btn-cancel:focus{
+.btn-cancel:active{
   background: #405060;
 }
 
@@ -132,7 +136,7 @@ input{
   font-weight: normal;
   border: 2px solid var(--bg-darker);
   border-radius: 4px;
-  transition: border-color 0.15s ease-in-out;
+  transition: border-color var(--dur-short) ease-in-out;
 }
 
 input:hover{
@@ -140,7 +144,7 @@ input:hover{
 }
 
 input:focus{
-  border-color: var(--primary-focus);
+  border-color: var(--primary-active);
 }
 
 label{

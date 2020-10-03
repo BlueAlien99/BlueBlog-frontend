@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import UserContext from './../contexts/user';
 
@@ -15,8 +15,7 @@ interface Props{
 
 function Auth(props: Props){
 
-  const history = useHistory();
-  const {setUser} = useContext(UserContext);
+  const {user, setUser} = useContext(UserContext);
 
   const [values, setValues] = useState({
     username: '',
@@ -48,7 +47,6 @@ function Auth(props: Props){
         isLoggedin: true
       });
     }
-    history.push('/');
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -81,6 +79,9 @@ function Auth(props: Props){
           : <p id={styles.switchMode} className="muted">Need an account? <Link to='/register'>Register</Link></p>
         }
       </div>
+      {user.isLoggedin &&
+        <Redirect to="/" />
+      }
     </div>
   );
 }
