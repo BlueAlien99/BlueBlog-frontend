@@ -3,9 +3,10 @@ import { NavLink } from 'react-router-dom';
 
 import UserContext from './../contexts/user';
 
-import styles from './Nav.module.css';
+import styles from './cssModules/Nav.module.css';
 
 function Nav(){
+  
   const {user, setUser} = useContext(UserContext);
 
   const handleLogout = () => {
@@ -21,7 +22,7 @@ function Nav(){
       <div id={styles.blogName}>BlueBlog</div>
       <ul id={styles.menu}>
         <li><NavLink exact to="/">Home</NavLink></li>
-        <li><NavLink exact to="/articles">Articles</NavLink></li>
+        <li><NavLink exact to="/posts">Posts</NavLink></li>
         <li><NavLink exact to="/about">About</NavLink></li>
         {user.isLoggedin &&
           <li><NavLink exact to={`/user/${user.username}`}>My Profile</NavLink></li>

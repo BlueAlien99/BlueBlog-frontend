@@ -5,6 +5,8 @@ import UserContext from './contexts/user';
 
 import Nav from './components/Nav';
 import Auth from './components/Auth';
+import BlogEdit from './components/BlogEdit';
+import BlogPost from './components/BlogPost';
 
 import url from './api-url';
 
@@ -48,8 +50,17 @@ function App(){
           <Route exact path="/">
             <h1>Homepage</h1>
           </Route>
-          <Route exact path="/articles">
-            <h1>articles</h1>
+          <Route exact path="/posts">
+            <h1>blog posts</h1>
+          </Route>
+          <Route exact path="/posts/new">
+            <BlogEdit />
+          </Route>
+          <Route exact path="/posts/preview">
+            <BlogPost />
+          </Route>
+          <Route path="/post/:id">
+            <BlogPost />
           </Route>
           <Route exact path="/about">
             <h1>about</h1>

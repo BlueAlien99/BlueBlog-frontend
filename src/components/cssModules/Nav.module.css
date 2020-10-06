@@ -2,7 +2,7 @@
 
 #nav{
   width: 100vw;
-  height: 64px;
+  height: var(--nav-height);
   background: var(--bg-darkest);
   display: flex;
 }

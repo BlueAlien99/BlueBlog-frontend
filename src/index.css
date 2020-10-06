@@ -1,3 +1,5 @@
+@import url("./generic.css");
+
 :root{
   --bg-dark: #36393f;
   --bg-darker: #2f3136;
@@ -20,7 +22,9 @@
   --divider: #BDBDBD;
 
 
-  --nav-height: 100px;
+  --nav-height: 64px;
+  --page-max-width: 1280px;
+  --page-small-width: 360px;
 
   --dur-short: 0.15s;
 }
@@ -47,7 +51,8 @@ body {
   background: var(--bg-darker);
 }
 
-code {
+code,
+.code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
@@ -72,20 +77,42 @@ a:hover, .a:hover{
 
 #root{
   width: 100%;
-  height: calc(100% - var(--nav-height));
+  height: 100%;
 }
 
 .route{
   width: 100%;
-  height: 100%;
+  height: calc(100% - var(--nav-height));
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
 }
 
 .container{
+  box-sizing: border-box;
   padding: 1em;
   background: var(--bg-dark);
   width: fit-content;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
+}
+
+.page-max-width{
+  width: 100%;
+  max-width: var(--page-max-width);
+}
+
+.page-max-height{
+  box-sizing: border-box;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  height: calc(100% - 4em);
+}
+
+.page-small-width{
+  width: var(--page-small-width);
 }
 
 .btn{
@@ -125,7 +152,16 @@ a:hover, .a:hover{
   background: #405060;
 }
 
-input{
+.form-title{
+  margin-top: 0.5em;
+  margin-bottom: 0.8em;
+  width: 100%;
+  text-align: center;
+}
+
+input,
+textarea{
+  width: 100%;
   display: block;
   box-sizing: border-box;
   padding: 0.5em 0.5em;
@@ -139,11 +175,17 @@ input{
   transition: border-color var(--dur-short) ease-in-out;
 }
 
-input:hover{
+textarea{
+  resize: none;
+}
+
+input:hover,
+textarea:hover{
   border-color: var(--primary-hover);
 }
 
-input:focus{
+input:focus,
+textarea:focus{
   border-color: var(--primary-active);
 }
 
